@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    background-color: rgb(39, 39, 39);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tasksBlock {
+    width: 500px;
+    min-height: 250px;
+    max-height: 700px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px 20px;
+    
+    &__title {
+        font-weight: 900;
+        font-size: 28px;
+    }
+
+    &__input {
+        position: relative;
+        margin-top: 25px;
+
+        input {
+            width: 100%;
+            padding: 0 140px 0 25px;
+            font-size: 16px;
+            height: 50px;
+            border: 0px;
+            border-radius: 50px;
+            background: rgb(234, 234, 234);
+
+            &:focus, &:active {
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+        &-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 50px;
+            background-color: rgb(255, 96, 38);
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all .2s;
+
+            &:hover {
+                background-color: rgb(200, 59, 8);
+            }
+        }
+    }
+
+    &__tasks {
+        margin-top: 25px;
+        padding: 0 10px;
+    }
+
+    &__task {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        &-checkbox {
+            display: flex;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            text-align: center;
+            border: 2px solid #c6c6c6;
+            background: #ffffff;
+
+            img {
+                width: 20px;
+                filter: invert(1);
+            }
+
+            &__done {
+                background: #ff6a07;
+            }
+        }
+
+        &-text{
+            margin-left: 20px;
+
+            &__done {
+                text-decoration: line-through;
+                opacity: .5;
+            }
+        }
+
+        &-delete {
+            display: flex;
+            justify-content: end;
+            flex-grow: 1;
+
+            img {
+                width: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+}
