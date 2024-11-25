@@ -1,0 +1,85 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00203a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body .container {
+  width: 600px;
+  margin: 0 auto;
+}
+body .container h1 {
+  color: #fff;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+body .container .input-block {
+  position: relative;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-bottom: 10px;
+}
+body .container .input-block input {
+  all: unset;
+  width: 400px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+body .container .input-block .copy {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  cursor: pointer;
+}
+body .container .input-block .copyDone {
+  position: absolute;
+  right: -65px;
+  top: -30px;
+  width: 170px;
+  color: #fff;
+  opacity: 0;
+  overflow: hidden;
+  cursor: none;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+body .container .input-block .copyDone-on {
+  opacity: 1;
+  overflow: visible;
+}
+body .container .start-generation {
+  color: #fff;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 15px 40px;
+  background-color: #007d4d;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.5s background-color;
+  transition: 0.5s background-color;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body .container .start-generation:hover {
+  background-color: #005a38;
+}

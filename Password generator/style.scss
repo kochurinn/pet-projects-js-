@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #00203a;
+    display: flex;
+    align-items: center;
+
+    .container {
+        width: 600px;
+        margin: 0 auto;
+
+        h1 {
+            color: #fff;
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .input-block {
+            position: relative;
+            max-width: fit-content;
+            margin-bottom: 10px;
+
+            input {
+                all: unset;
+                width: 400px;
+                height: 50px;
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 0 20px;
+            }
+    
+            .copy {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 20px;
+                cursor: pointer;
+            }
+
+            .copyDone {
+                position: absolute;
+                right: -65px;
+                top: -30px; 
+                width: 170px;
+                color: #fff;
+                opacity: 0;
+                overflow: hidden;
+                cursor: none;
+                transition: .5s all;
+
+                &-on {
+                    opacity: 1;
+                    overflow: visible;
+                }
+            }
+        }
+        
+        .start-generation {
+            color: #fff;
+            max-width: fit-content;
+            padding: 15px 40px;
+            background-color: #007d4d;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .5s background-color;
+            user-select: none;
+
+            &:hover {
+                background-color: #005a38;
+            }
+        }
+    }
+}
+
