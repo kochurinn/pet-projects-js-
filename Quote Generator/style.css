@@ -40,6 +40,9 @@ body {
   background-color: #377cdc;
   margin-bottom: 30px;
 }
+.quote-block .quote {
+  font-size: 19px;
+}
 .quote-block .author-quote {
   position: absolute;
   bottom: 100px;
