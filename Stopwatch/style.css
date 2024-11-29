@@ -1,0 +1,57 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2f2f2f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stopwatch {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 50px;
+}
+.stopwatch__counter {
+  font-size: 60px;
+  text-align: center;
+}
+.stopwatch__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 30px;
+}
+.stopwatch__btns-del, .stopwatch__btns-startStop, .stopwatch__btns-again {
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 130px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid #898989;
+  cursor: pointer;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.stopwatch__btns-del:hover, .stopwatch__btns-startStop:hover, .stopwatch__btns-again:hover {
+  background-color: #898989;
+  color: #fff;
+}
