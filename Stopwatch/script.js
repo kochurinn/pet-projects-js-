@@ -10,63 +10,58 @@ let h = 0
 let m = 0
 let s = 0
 let isPaused = true
-let dateNow
+let intervalId // Идентификатор интервала
 
-const startTime = () => {
-    isPaused = !isPaused
-    
-    const interval = setInterval(() => calculation(), 1000)
-
-    isPaused ? startStop.textContent = 'Старт' : startStop.textContent = 'Пауза'
-
-    const calculation = () => {
-        saveStartDate = Date.now()
-        if (!isPaused) {
-            if (s == 59) {
-                s = 0
-                m++
-            } else {
-                s++
-            }
-        
-            if (m == 60) {
+const calculation = () => {
+    if (!isPaused) {
+        s++
+        if (s === 60) {
+            s = 0
+            m++
+            if (m === 60) {
                 m = 0
                 h++
             }
-        
-            hours.textContent = h < 10 ? `0${h}` : `${h}`
-            minutes.textContent = m < 10 ? `0${m}` : `${m}`
-            seconds.textContent = s < 10 ? `0${s}` : `${s}`
         }
-        else {
-            clearInterval(interval)
-        }
+
+        hours.textContent = h < 10 ? `0${h}` : `${h}`
+        minutes.textContent = m < 10 ? `0${m}` : `${m}`
+        seconds.textContent = s < 10 ? `0${s}` : `${s}`
     }
-
-    const clearTime = () => {
-        h = 0
-        m = 0
-        s = 0
-        hours.textContent = `0${h}`
-        minutes.textContent = `0${m}`
-        seconds.textContent = `0${s}`
-    }
-
-    del.addEventListener('click', () => {
-        clearInterval(interval)
-        clearTime()
-        isPaused = true
-        startStop.textContent = 'Старт'
-    })
-
-    again.addEventListener('click', () => {
-        clearInterval(interval)
-        clearTime()
-        isPaused = true
-        setTimeout(() => startTime(), (Date.now() - saveStartDate) % 1000)
-    })
 }
 
-startStop.addEventListener('click', startTime)
+const startTimeFunction = () => {
+    isPaused = !isPaused;
+    startStop.textContent = isPaused ? 'Старт' : 'Пауза'
 
-console.log(Date.now())
+    if (!isPaused) {
+      intervalId = setInterval(calculation, 1000)
+    } else {
+        clearInterval(intervalId)
+    }
+}
+
+const clearTime = () => {
+    h = 0
+    m = 0
+    s = 0
+    hours.textContent = '00'
+    minutes.textContent = '00'
+    seconds.textContent = '00'
+}
+
+del.addEventListener('click', () => {
+    clearInterval(intervalId)
+    clearTime()
+    isPaused = true
+    startStop.textContent = 'Старт'
+})
+
+again.addEventListener('click', () => {
+    clearInterval(intervalId)
+    clearTime()
+    isPaused = true
+    startTimeFunction()
+})
+
+startStop.addEventListener('click', startTimeFunction)
